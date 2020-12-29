@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components"
+
+const GobalStyles = createGlobalStyle`
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -595,3 +598,6 @@ pre tt:after {
     font-size: 100%;
   }
 }
+`
+
+export default GobalStyles
