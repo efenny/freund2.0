@@ -1,34 +1,85 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import { StaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
+import PropTypes from "prop-types"
+import { maxWidth } from "../styles/GobalStyles"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+const HeaderStyles = styled.header`
+  height: 100vh;
+  min-height: 400px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(1rem, 10vw, 4rem);
+
+  .header-wrapper {
+    max-width: ${maxWidth};
+    width: 100vw;
+
+    h1 {
+      font-size: 1.75rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 4rem;
+      line-height: 1.2;
+      margin: 0;
+
+      span {
+        position: relative;
+        display: inline-block;
+      }
+
+      .space {
+        display: initial;
+      }
+    }
+  }
+`
+
+const Header = ({ data }) => {
+  const { name, jobTitle } = data.siteSettings.nodes[0]
+
+  return (
+    <HeaderStyles data-scroll-section>
+      <div className="header-wrapper">
+        <h1 data-scroll data-scroll-speed="2">
+          {name}
+        </h1>
+        <h2>
+          {Array.from(jobTitle).map((char, i) => (
+            <span
+              className={char === " " ? "space" : ""}
+              key={`${i}-${char}`}
+              data-scroll
+              data-scroll-offset="55%"
+              data-scroll-speed={Math.abs(Math.random() * 5)}
+            >
+              {char}
+            </span>
+          ))}
+        </h2>
+      </div>
+    </HeaderStyles>
+  )
+}
+const MyHeader = () => (
+  <StaticQuery
+    query={graphql`
+      query HeadingQuery {
+        siteSettings: allSanitySiteSettings {
+          nodes {
+            name
+            jobTitle
+          }
+        }
+      }
+    `}
+    render={data => <Header data={data} />}
+  />
 )
 
 Header.propTypes = {
@@ -39,4 +90,4 @@ Header.defaultProps = {
   siteTitle: ``,
 }
 
-export default Header
+export default MyHeader

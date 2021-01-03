@@ -1,5 +1,10 @@
 import { createGlobalStyle } from "styled-components"
 
+export const mainColor = "#0a0a0a"
+export const mainWhite = "#f6f6f6"
+export const maxWidth = "1024px"
+export const transition = "all 0.3s ease-in"
+
 const GobalStyles = createGlobalStyle`
 html {
   -ms-text-size-adjust: 100%;
@@ -21,6 +26,8 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  background-color: ${mainColor};
+  color: ${mainWhite};
 }
 article,
 aside,

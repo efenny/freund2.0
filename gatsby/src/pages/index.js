@@ -1,21 +1,42 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
-import Image from "../components/Image"
 import SEO from "../components/SEO"
+import PastWorkList from "../components/PastWorkList"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-  </Layout>
-)
+function IndexPage({ data }) {
+  const pastWorkListArr = data.allSanityPastWork.nodes
+  console.log(pastWorkListArr)
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <PastWorkList items={pastWorkListArr} />
+    </Layout>
+  )
+}
 
 export default IndexPage
+
+export const query = graphql`
+  query MyQuery {
+    allSanityPastWork(sort: { order: DESC, fields: _createdAt }) {
+      nodes {
+        name
+        role
+        siteUrl
+        slug {
+          current
+        }
+        image {
+          asset {
+            fluid(maxWidth: 1024, maxHeight: 576) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        techStack
+      }
+    }
+  }
+`

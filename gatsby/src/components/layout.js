@@ -1,44 +1,30 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header"
+import Footer from "./Footer"
 import GobalStyles from "../styles/GobalStyles"
+import "../styles/LocomotiveScroll.css"
 import styled from "styled-components"
+import { maxWidth } from "../styles/GobalStyles"
+import Scroll from "../components/locomotiveScroll"
 
 const MainWrapper = styled.div`
   margin: 0 auto;
-  max-width: 960px;
-  padding: 0 1.0875rem 1.45rem;
+  max-width: ${maxWidth};
+  width: 100%;
 `
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-          jobDescription
-        }
-      }
-    }
-  `)
-
   return (
     <>
+      <Scroll />
       <GobalStyles />
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <h1>{data.site.siteMetadata.jobDescription}</h1>
-      <MainWrapper>
-        <main>{children}</main>
-      </MainWrapper>
+      <main data-scroll-container>
+        <Header />
+        <MainWrapper data-scroll-section>{children}</MainWrapper>
+        <Footer />
+      </main>
     </>
   )
 }
