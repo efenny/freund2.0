@@ -10,7 +10,7 @@ function IndexPage({ data }) {
   console.log(pastWorkListArr)
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Frontend Developer" />
       <PastWorkList items={pastWorkListArr} />
     </Layout>
   )

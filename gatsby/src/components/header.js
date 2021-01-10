@@ -49,19 +49,7 @@ const Header = ({ data }) => {
         <h1 data-scroll data-scroll-speed="2">
           {name}
         </h1>
-        <h2>
-          {Array.from(jobTitle).map((char, i) => (
-            <span
-              className={char === " " ? "space" : ""}
-              key={`${i}-${char}`}
-              data-scroll
-              data-scroll-offset="55%"
-              data-scroll-speed={Math.abs(Math.random() * 5)}
-            >
-              {char}
-            </span>
-          ))}
-        </h2>
+        <h2>{jobTitle}</h2>
       </div>
     </HeaderStyles>
   )
