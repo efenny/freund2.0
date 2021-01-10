@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import Header from "./Header"
 import Footer from "./Footer"
 import GobalStyles from "../styles/GobalStyles"
+import GlobalFonts from "../fonts/fonts"
+
 import "../styles/LocomotiveScroll.css"
 import styled from "styled-components"
 import { maxWidth } from "../styles/GobalStyles"
@@ -19,6 +21,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Scroll />
+      <GlobalFonts />
       <GobalStyles />
       <main data-scroll-container>
         <Header />
