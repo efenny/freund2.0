@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Erik Freundorfer`,
     jobDescription: `Frontend Developer/Designer`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Frontend Developer with a passion for creating beautiful web experiences. Currently learning WebGL.`,
     author: `Erik Freundorfer`,
   },
   plugins: [
