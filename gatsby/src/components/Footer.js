@@ -3,6 +3,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import React from "react"
 import { maxWidth, mainWhite } from "../styles/GobalStyles"
+import { mediaQueries } from "../styles/mediaQueries"
 
 const FooterStyles = styled.footer`
   height: 100vh;
@@ -14,9 +15,14 @@ const FooterStyles = styled.footer`
   align-items: center;
   padding: clamp(1rem, 10vw, 4rem);
 
+  ${mediaQueries("max", "md")`
+    padding-left: 2rem;
+    padding-right: 2rem;
+  `}
+
   .footer-wrapper {
     max-width: ${maxWidth};
-    width: 100vw;
+    width: 100%;
 
     h2 {
       font-size: 4rem;

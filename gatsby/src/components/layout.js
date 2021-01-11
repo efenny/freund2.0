@@ -5,7 +5,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import GobalStyles from "../styles/GobalStyles"
 import GlobalFonts from "../fonts/fonts"
-
+import { mediaQueries } from "../styles/mediaQueries"
 import "../styles/LocomotiveScroll.css"
 import styled from "styled-components"
 import { maxWidth } from "../styles/GobalStyles"
@@ -15,6 +15,11 @@ const MainWrapper = styled.div`
   margin: 0 auto;
   max-width: ${maxWidth};
   width: 100%;
+
+  ${mediaQueries("max", "md")`
+    padding-left: 2rem;
+    padding-right: 2rem;
+  `}
 `
 
 const Layout = ({ children }) => {

@@ -2,13 +2,6 @@ import React from "react"
 // import styled from "styled-components"
 import PastWork from "./PastWork"
 
-// const PastWorkListStyles = styled.div`
-//   display: grid;
-//   grid-template-columns: 1fr;
-//   gap: 2rem;
-//   width: 100%;
-// `
-
 const PastWorkList = ({ items }) => {
   return (
     <>

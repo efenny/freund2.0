@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { transition, mainColor, mainWhite } from "../styles/GobalStyles"
+import { mediaQueries } from "../styles/mediaQueries"
 
 const PastWorkStyles = styled.section`
   margin-bottom: 10vh;
@@ -17,13 +18,21 @@ const PastWorkStyles = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    ${mediaQueries("max", "md")`
+      flex-wrap: wrap;`}
 
     .info-left {
+      ${mediaQueries("max", "md")`
+      width: 100%;`}
     }
 
     .info-right {
       display: flex;
       justify-content: flex-end;
+
+      ${mediaQueries("max", "md")`
+      width: 100%;
+      margin-top: 2rem;`}
     }
 
     .info-inner {
@@ -33,12 +42,20 @@ const PastWorkStyles = styled.section`
 
     .info-title {
       font-weight: 400;
+
+      ${mediaQueries("max", "md")`
+      margin-bottom: 1rem;
+      font-size: 1.2rem;`}
     }
 
     .info-client {
       opacity: 0.5;
       margin-left: 1rem;
       font-weight: 300;
+
+      ${mediaQueries("max", "md")`
+      margin-bottom: 1rem;
+      font-size: 1rem;`}
     }
     .info-stack {
       margin-top: 1.25rem;
