@@ -27,12 +27,20 @@ const FooterStyles = styled.footer`
     h2 {
       font-size: 4rem;
       line-height: 1.2;
+
+      ${mediaQueries("max", "md")`
+        font-size: 9vw;
+      `}
     }
 
     h3 {
       font-size: 1.75rem;
       line-height: 1.2;
       margin: 0;
+
+      ${mediaQueries("max", "md")`
+        font-size: 1.25rem;
+      `}
 
       a {
         color: ${mainWhite};

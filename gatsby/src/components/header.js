@@ -28,12 +28,21 @@ const HeaderStyles = styled.header`
     h1 {
       font-size: 1.75rem;
       line-height: 1.2;
+
+      ${mediaQueries("max", "md")`
+        font-size: 1.25rem;
+        margin-bottom: 0;
+      `}
     }
 
     h2 {
       font-size: 4rem;
       line-height: 1.2;
       margin: 0;
+
+      ${mediaQueries("max", "md")`
+        font-size: 9vw;
+      `}
 
       span {
         position: relative;
