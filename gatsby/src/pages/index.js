@@ -7,7 +7,6 @@ import PastWorkList from "../components/PastWorkList"
 
 function IndexPage({ data }) {
   const pastWorkListArr = data.allSanityPastWork.nodes
-  console.log(pastWorkListArr)
   return (
     <Layout>
       <SEO title="Frontend Developer" />
