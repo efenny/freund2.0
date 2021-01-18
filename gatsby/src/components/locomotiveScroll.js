@@ -9,10 +9,13 @@ const scrollOptions = {
   container: "main",
   options: {
     smooth: true,
-    smoothMobile: false,
+    smoothMobile: true,
     getDirection: true,
     touchMultiplier: 2.5,
     lerp: 0.15,
+    smartphone: {
+      smooth: true,
+    },
   },
 }
 

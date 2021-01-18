@@ -30,8 +30,8 @@ const HeaderStyles = styled.header`
       line-height: 1.2;
 
       ${mediaQueries("max", "md")`
-        font-size: 1.25rem;
-        margin-bottom: 0;
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
       `}
     }
 
@@ -41,7 +41,7 @@ const HeaderStyles = styled.header`
       margin: 0;
 
       ${mediaQueries("max", "md")`
-        font-size: 9vw;
+        font-size: 1.5rem;
       `}
 
       span {

@@ -38,10 +38,12 @@ const PastWorkStyles = styled.section`
     .info-inner {
       display: flex;
       align-items: flex-end;
+      flex-wrap: wrap;
     }
 
     .info-title {
       font-weight: 400;
+      margin-right: 1rem;
 
       ${mediaQueries("max", "md")`
       margin-bottom: 1rem;
@@ -50,7 +52,6 @@ const PastWorkStyles = styled.section`
 
     .info-client {
       opacity: 0.5;
-      margin-left: 1rem;
       font-weight: 300;
 
       ${mediaQueries("max", "md")`
@@ -58,10 +59,10 @@ const PastWorkStyles = styled.section`
       font-size: 1rem;`}
     }
     .info-stack {
-      margin-top: 1.25rem;
       display: flex;
       flex-wrap: wrap;
       margin: 0;
+      margin-bottom: 0.75rem;
       padding: 0;
 
       li {
@@ -69,6 +70,7 @@ const PastWorkStyles = styled.section`
         opacity: 0.25;
         margin-right: 0.75em;
         font-weight: 400;
+        margin-bottom: 0.25rem;
         font-size: 0.85rem;
         transition: ${transition};
 
