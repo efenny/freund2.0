@@ -19,7 +19,7 @@ export default IndexPage
 
 export const query = graphql`
   query MyQuery {
-    allSanityPastWork(sort: { order: DESC, fields: _createdAt }) {
+    allSanityPastWork(sort: { order: DESC, fields: datePublished }) {
       nodes {
         name
         role

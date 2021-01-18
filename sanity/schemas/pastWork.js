@@ -21,6 +21,17 @@ const PastWork = {
       },
     },
     {
+      title: 'Date Published',
+      name: 'datePublished',
+      type: 'datetime',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+        timeFormat: 'HH:mm',
+        timeStep: 15,
+        calendarTodayLabel: 'Today',
+      },
+    },
+    {
       title: 'Role',
       name: 'role',
       type: 'string',
