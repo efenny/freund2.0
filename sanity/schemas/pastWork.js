@@ -57,6 +57,18 @@ const PastWork = {
       ],
     },
   ],
+  orderings: [
+    {
+      title: 'Publish Date, New',
+      name: 'releaseDateDesc',
+      by: [{ field: 'datePublished', direction: 'desc' }],
+    },
+    {
+      title: 'Publish Date, Old',
+      name: 'releaseDateAsc',
+      by: [{ field: 'datePublished', direction: 'asc' }],
+    },
+  ],
 };
 
 export default PastWork;
