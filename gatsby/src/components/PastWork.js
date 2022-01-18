@@ -73,6 +73,7 @@ const PastWorkStyles = styled.section`
         margin-bottom: 0.25rem;
         font-size: 0.85rem;
         transition: ${transition};
+        cursor: "initial";
 
         &:last-child {
           margin-right: 0;
@@ -140,14 +141,18 @@ const PastWork = ({ name, slug, role, image, siteUrl, techStack }) => (
         </ul>
       </div>
       <div class="infright">
-        <ButtonStyles
-          href={siteUrl}
-          className="button"
-          target="_blank"
-          rel="noreferrer"
-        >
-          View Site
-        </ButtonStyles>
+        {siteUrl ? (
+          <ButtonStyles
+            href={siteUrl}
+            className="button"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View Site
+          </ButtonStyles>
+        ) : (
+          <p>coming soon</p>
+        )}
       </div>
     </div>
   </PastWorkStyles>
